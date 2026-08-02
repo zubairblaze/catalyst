@@ -1,0 +1,7 @@
+User-Agent: *
+Allow: /
+Disallow: /privacy-policy
+Disallow: /terms
+
+Host: https://www.thecatalystfze.com
+Sitemap: https://www.thecatalystfze.com/sitemap.xml
