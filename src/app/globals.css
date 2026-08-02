@@ -1,0 +1,246 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ============================================================
+   THE CATALYST — Design System
+   Color-scheme presets are driven by CSS variables and toggled
+   via the [data-scheme] attribute on <html> (see ThemeSwitcher).
+   Neutrals stay consistent; brand + accent ramps swap per scheme.
+   ============================================================ */
+
+:root {
+  --font-sans: 'Plus Jakarta Sans', ui-sans-serif, system-ui, sans-serif;
+  --font-display: 'Sora', var(--font-sans);
+
+  /* Neutral ink + surfaces (shared across schemes) */
+  --ink: 15 23 42; /* slate-900 */
+  --ink-soft: 51 65 85; /* slate-700 */
+  --ink-muted: 100 116 139; /* slate-500 */
+  --ink-inverse: 248 250 252;
+  --surface: 255 255 255;
+  --surface-soft: 248 250 252; /* slate-50 */
+  --surface-strong: 241 245 249; /* slate-100 */
+  --line: 226 232 240; /* slate-200 */
+
+  --radius: 16px;
+}
+
+/* ---------- SCHEME: ROYAL (default — official brand #0641b4) ---------- */
+:root,
+[data-scheme='royal'] {
+  --brand-50: 235 241 251;
+  --brand-100: 213 225 246;
+  --brand-200: 170 193 236;
+  --brand-300: 120 153 221;
+  --brand-400: 62 110 201;
+  --brand-500: 22 84 190;
+  --brand-600: 6 65 180; /* primary — #0641b4 */
+  --brand-700: 6 55 150;
+  --brand-800: 9 46 120;
+  --brand-900: 12 38 95;
+  --brand-950: 8 22 58;
+  --accent-400: 56 189 248;
+  --accent-500: 14 165 233;
+  --accent-600: 2 132 199;
+  --surface-dark: 8 18 52;
+}
+
+/* ---------- SCHEME: MIDNIGHT (navy + gold) ---------- */
+[data-scheme='midnight'] {
+  --brand-50: 236 241 250;
+  --brand-100: 214 224 244;
+  --brand-200: 173 192 231;
+  --brand-300: 122 149 214;
+  --brand-400: 78 110 190;
+  --brand-500: 46 78 158;
+  --brand-600: 30 58 128; /* deep navy */
+  --brand-700: 24 47 104;
+  --brand-800: 20 38 84;
+  --brand-900: 16 30 66;
+  --brand-950: 9 18 42;
+  --accent-400: 245 208 122;
+  --accent-500: 214 168 74; /* gold */
+  --accent-600: 180 134 46;
+  --surface-dark: 9 18 42;
+}
+
+/* ---------- SCHEME: EMERALD (green + gold) ---------- */
+[data-scheme='emerald'] {
+  --brand-50: 236 250 244;
+  --brand-100: 209 244 227;
+  --brand-200: 165 231 202;
+  --brand-300: 108 210 168;
+  --brand-400: 52 180 130;
+  --brand-500: 22 150 105;
+  --brand-600: 10 120 84; /* deep emerald */
+  --brand-700: 9 97 69;
+  --brand-800: 10 78 58;
+  --brand-900: 9 62 48;
+  --brand-950: 6 38 30;
+  --accent-400: 245 208 122;
+  --accent-500: 214 168 74;
+  --accent-600: 180 134 46;
+  --surface-dark: 6 38 30;
+}
+
+/* ---------- SCHEME: AZURE (bright cyan-blue + coral) ---------- */
+[data-scheme='azure'] {
+  --brand-50: 235 249 255;
+  --brand-100: 206 241 255;
+  --brand-200: 157 227 255;
+  --brand-300: 96 206 252;
+  --brand-400: 45 180 240;
+  --brand-500: 14 152 220;
+  --brand-600: 3 122 192; /* azure */
+  --brand-700: 6 98 158;
+  --brand-800: 10 80 128;
+  --brand-900: 12 66 104;
+  --brand-950: 8 40 66;
+  --accent-400: 255 143 112;
+  --accent-500: 251 113 76;
+  --accent-600: 226 84 48;
+  --surface-dark: 8 34 58;
+}
+
+/* ---------- SCHEME: GRAPHITE (slate + electric blue) ---------- */
+[data-scheme='graphite'] {
+  --brand-50: 238 242 247;
+  --brand-100: 222 229 238;
+  --brand-200: 195 206 222;
+  --brand-300: 155 172 197;
+  --brand-400: 111 133 165;
+  --brand-500: 79 102 136;
+  --brand-600: 51 74 108; /* graphite blue */
+  --brand-700: 40 58 86;
+  --brand-800: 33 47 69;
+  --brand-900: 26 37 55;
+  --brand-950: 15 22 34;
+  --accent-400: 88 160 255;
+  --accent-500: 45 128 245;
+  --accent-600: 24 100 214;
+  --surface-dark: 15 22 34;
+}
+
+@layer base {
+  * {
+    border-color: rgb(var(--line));
+  }
+
+  html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    background-color: rgb(var(--surface));
+    color: rgb(var(--ink));
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3, h4, h5 {
+    font-family: var(--font-display);
+    letter-spacing: -0.02em;
+    /* Colour is inherited (body = ink, dark sections set text-white on an
+       ancestor) so headings are never forced dark on a dark background. */
+    color: inherit;
+  }
+
+  ::selection {
+    background: rgb(var(--brand-600) / 0.9);
+    color: white;
+  }
+
+  /* Themed, slim scrollbar */
+  ::-webkit-scrollbar { width: 10px; height: 10px; }
+  ::-webkit-scrollbar-track { background: rgb(var(--surface-strong)); }
+  ::-webkit-scrollbar-thumb {
+    background: rgb(var(--brand-600) / 0.6);
+    border-radius: 999px;
+    border: 2px solid rgb(var(--surface-strong));
+  }
+  ::-webkit-scrollbar-thumb:hover { background: rgb(var(--brand-600)); }
+}
+
+@layer components {
+  .container-page {
+    @apply mx-auto w-full max-w-7xl px-5 sm:px-8 lg:px-10;
+  }
+
+  .eyebrow {
+    @apply inline-flex items-center gap-2 rounded-full border border-brand-200 bg-brand-50 px-3.5 py-1.5 text-xs font-semibold uppercase tracking-[0.18em] text-brand-700;
+  }
+
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 rounded-full px-6 py-3 text-sm font-semibold transition-all duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-500 focus-visible:ring-offset-2;
+  }
+  .btn-primary {
+    @apply btn bg-brand-600 text-white shadow-[0_10px_30px_-10px_rgb(var(--brand-600)/0.7)] hover:bg-brand-700 hover:shadow-[0_16px_40px_-12px_rgb(var(--brand-600)/0.8)] hover:-translate-y-0.5;
+  }
+  .btn-ghost {
+    @apply btn border border-line bg-white/70 text-ink hover:border-brand-300 hover:bg-brand-50 hover:text-brand-700;
+  }
+  .btn-light {
+    @apply btn bg-white text-brand-700 hover:bg-brand-50 hover:-translate-y-0.5;
+  }
+
+  .card {
+    @apply rounded-3xl border border-line bg-surface p-7 shadow-soft transition-all duration-300;
+  }
+
+  .gradient-text {
+    @apply bg-gradient-to-r from-brand-600 via-brand-500 to-accent-500 bg-clip-text text-transparent;
+  }
+
+  .section {
+    @apply py-20 sm:py-24 lg:py-28;
+  }
+
+  .link-underline {
+    @apply relative after:absolute after:-bottom-0.5 after:left-0 after:h-px after:w-0 after:bg-current after:transition-all after:duration-300 hover:after:w-full;
+  }
+}
+
+@layer utilities {
+  .text-balance { text-wrap: balance; }
+  .text-pretty { text-wrap: pretty; }
+
+  .bg-grid {
+    background-image:
+      linear-gradient(rgb(var(--line) / 0.6) 1px, transparent 1px),
+      linear-gradient(90deg, rgb(var(--line) / 0.6) 1px, transparent 1px);
+    background-size: 56px 56px;
+  }
+
+  .bg-radial-brand {
+    background:
+      radial-gradient(60% 60% at 80% 0%, rgb(var(--brand-500) / 0.14), transparent 60%),
+      radial-gradient(50% 50% at 0% 100%, rgb(var(--accent-500) / 0.10), transparent 55%);
+  }
+
+  .mask-fade-b {
+    -webkit-mask-image: linear-gradient(to bottom, black 70%, transparent 100%);
+    mask-image: linear-gradient(to bottom, black 70%, transparent 100%);
+  }
+
+  .glass {
+    background: rgb(var(--surface) / 0.72);
+    backdrop-filter: blur(14px) saturate(180%);
+    -webkit-backdrop-filter: blur(14px) saturate(180%);
+  }
+}
+
+/* Respect reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
