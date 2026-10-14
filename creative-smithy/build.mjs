@@ -318,10 +318,10 @@ p{margin:0}
 .cover .eyebrow{font:500 9pt/1 var(--mono); letter-spacing:0.12em; text-transform:uppercase; color:var(--brass)}
 .cover h1{font-size:54pt; line-height:0.95; font-weight:800; max-width:11ch}
 .cover .intro{font-size:12.5pt; line-height:1.5; max-width:120mm; color:#BCC4CF}
-.cover .meta{display:grid; grid-template-columns:repeat(3, auto); justify-content:start; gap:4mm 14mm; border-top:1px solid #3A4654; padding-top:7mm}
+.cover .meta{display:grid; grid-template-columns:repeat(4, auto); justify-content:space-between; gap:4mm 8mm; border-top:1px solid #3A4654; padding-top:7mm}
 .cover .meta div{display:grid; gap:2mm}
 .cover .meta dt{font:500 7.5pt/1 var(--mono); letter-spacing:0.1em; text-transform:uppercase; color:#8A96A5}
-.cover .meta dd{margin:0; font:600 11pt/1.2 var(--body)}
+.cover .meta dd{margin:0; font:600 10.5pt/1.35 var(--body); white-space:nowrap}
 .cover .toc{list-style:none; margin:0; padding:0; columns:2; column-gap:10mm; font-size:10pt; color:#BCC4CF; counter-reset:t}
 .cover .toc li{counter-increment:t; padding:1.6mm 0; border-bottom:1px solid #2C3846; break-inside:avoid}
 .cover .toc li::before{content:counter(t, decimal-leading-zero); font:500 8pt var(--mono); color:var(--brass); margin-right:4mm}
@@ -415,6 +415,7 @@ table.t2 col.c-lbl{width:44%}
     <div><dt>Issued</dt><dd>${fmtDate(today)}</dd></div>
     <div><dt>Valid until</dt><dd>${fmtDate(validUntil)}</dd></div>
     <div><dt>Currency</dt><dd>GBP, excl. VAT</dd></div>
+    ${contactBits.length ? `<div><dt>Contact</dt><dd>${contactBits.join('<br>')}</dd></div>` : ''}
   </dl>
 </section>
 

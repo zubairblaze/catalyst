@@ -4,8 +4,8 @@ export const company = {
   name: 'Creative Smithy',
   // Fill these in to show them on the page and in the PDF. Empty values are hidden.
   contactName: '',
-  email: '',
-  phone: '',
+  email: 'project@creativesmithy.com',
+  phone: '+971 54 763 5672',
   website: '',
   bookingLink: '',
   paymentMethods: 'bank transfer or card',
