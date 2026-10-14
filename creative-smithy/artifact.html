@@ -1,0 +1,351 @@
+<title>Creative Smithy Pricing</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="description" content="Creative Smithy price list: websites, online stores, custom apps, social media, SEO and care plans.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Figtree:ital,wght@0,400;0,500;0,600;1,400&family=JetBrains+Mono:wght@500&display=swap">
+<style>
+/* Layout: a forge-ledger — tight sticky section index, then each service as a row of tier "ingots" aligned on a shared subgrid. */
+:root{
+  --paper:#F2F3F5; --surface:#FFFFFF; --ink:#17202B; --muted:#5A6472; --line:#D9DEE5;
+  --brass:#A3591A; --brass-ink:#FFFFFF; --brass-soft:#F5E7D8; --iron:#1C2632; --iron-ink:#EEF1F4;
+  --display:"Bricolage Grotesque", "Avenir Next", "Segoe UI", system-ui, sans-serif;
+  --body:"Figtree", "Segoe UI", system-ui, -apple-system, sans-serif;
+  --mono:"JetBrains Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
+  --r:10px;
+}
+@media (prefers-color-scheme: dark){ :root:not([data-theme="light"]){
+  --paper:#0F141A; --surface:#171E27; --ink:#E8ECF1; --muted:#9AA4B1; --line:#2A3440;
+  --brass:#E39A55; --brass-ink:#1A1108; --brass-soft:#2D2116; --iron:#0A0E13; --iron-ink:#E8ECF1; color-scheme:dark } }
+:root[data-theme="dark"]{
+  --paper:#0F141A; --surface:#171E27; --ink:#E8ECF1; --muted:#9AA4B1; --line:#2A3440;
+  --brass:#E39A55; --brass-ink:#1A1108; --brass-soft:#2D2116; --iron:#0A0E13; --iron-ink:#E8ECF1; color-scheme:dark }
+
+*{box-sizing:border-box}
+html{scroll-behavior:smooth; scroll-padding-top:72px}
+@media (prefers-reduced-motion: reduce){ html{scroll-behavior:auto} }
+body{background:var(--paper); color:var(--ink); font:400 16px/1.55 var(--body); margin:0}
+.wrap{max-width:1120px; margin:0 auto; padding-left:max(16px, env(safe-area-inset-left, 0px)); padding-right:max(16px, env(safe-area-inset-right, 0px))}
+h1,h2,h3{font-family:var(--display); text-wrap:balance; margin:0; letter-spacing:-0.01em}
+p{margin:0}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--brass); outline-offset:2px; border-radius:4px}
+.sr{position:absolute; width:1px; height:1px; overflow:hidden; clip:rect(0 0 0 0); white-space:nowrap}
+.mark{width:30px; height:auto; display:block}
+
+/* masthead */
+.mast{background:var(--iron); color:var(--iron-ink)}
+.mast .wrap{padding-block:28px 56px; display:grid; gap:40px}
+.brand{display:flex; align-items:center; gap:12px; font:700 20px/1 var(--display); letter-spacing:-0.01em}
+.hero{display:grid; gap:20px; max-width:62ch}
+.hero .eyebrow{color:var(--brass)}
+.hero h1{font-size:clamp(2.4rem, 6vw, 4.4rem); font-weight:800; line-height:0.98}
+.hero p.intro{font-size:1.125rem; color:color-mix(in srgb, var(--iron-ink) 78%, transparent)}
+.facts{display:flex; flex-wrap:wrap; gap:8px 24px; margin:0; padding:0; list-style:none; font:500 12px/1.4 var(--mono); text-transform:uppercase; letter-spacing:0.08em; color:color-mix(in srgb, var(--iron-ink) 70%, transparent)}
+.facts li::before{content:"◆"; color:var(--brass); margin-right:8px; font-size:9px; vertical-align:2px}
+
+/* section index */
+.index{position:sticky; top:env(safe-area-inset-top, 0px); z-index:5; background:color-mix(in srgb, var(--paper) 92%, transparent); backdrop-filter:blur(8px); border-bottom:1px solid var(--line)}
+.index ul{display:flex; gap:4px; list-style:none; margin:0; padding:10px 0; overflow-x:auto; scrollbar-width:none}
+.index a{display:block; white-space:nowrap; text-decoration:none; font:500 14px/1 var(--body); color:var(--muted); padding:8px 12px; border-radius:999px}
+.index a:hover{color:var(--ink); background:var(--surface)}
+
+/* sections */
+main .wrap{display:grid; gap:88px; padding-block:64px 96px}
+.sec{display:grid; gap:28px; min-width:0}
+.sec-head{display:grid; gap:10px; max-width:65ch}
+.eyebrow{font:500 12px/1.3 var(--mono); text-transform:uppercase; letter-spacing:0.1em; color:var(--muted); display:flex; gap:12px; align-items:baseline}
+.eyebrow .num{color:var(--brass)}
+.sec h2{font-size:clamp(1.8rem, 3.6vw, 2.6rem); font-weight:800; line-height:1.05}
+.lead{color:var(--muted); font-size:1.0625rem}
+
+/* tiers on a shared subgrid so rows line up across cards */
+.tiers{display:grid; gap:16px; align-items:start}
+.tiers.cols-3{grid-template-columns:repeat(3, minmax(0,1fr))}
+.tiers.cols-2{grid-template-columns:repeat(2, minmax(0,1fr)); max-width:760px}
+.tier{background:var(--surface); border:1px solid var(--line); border-radius:var(--r); display:grid; grid-template-rows:auto 1fr; min-width:0}
+.tier.popular{border-color:var(--brass); box-shadow:0 0 0 1px var(--brass)}
+.tier-top{padding:22px 22px 18px; display:grid; gap:6px; border-bottom:1px solid var(--line); position:relative}
+.tier h3{font-size:1.25rem; font-weight:700}
+.price{font:800 2.25rem/1 var(--display); font-variant-numeric:tabular-nums; letter-spacing:-0.02em}
+.from,.per{font:500 0.8125rem/1 var(--body); color:var(--muted); letter-spacing:0}
+.badge{position:absolute; top:-11px; right:18px; background:var(--brass); color:var(--brass-ink); font:500 11px/1 var(--mono); text-transform:uppercase; letter-spacing:0.08em; padding:6px 10px; border-radius:999px}
+.tier dl{margin:0; padding:6px 22px 14px}
+.row{display:grid; grid-template-columns:minmax(0,1fr) auto; gap:12px; padding:10px 0; border-bottom:1px dashed var(--line); align-items:baseline}
+.row:last-child{border-bottom:0}
+.row dt{color:var(--muted); font-size:0.875rem}
+.row dd{margin:0; text-align:right; font-weight:600; font-size:0.9375rem; max-width:17ch}
+.yes{color:var(--brass); display:inline-flex}
+.tick{width:18px; height:18px}
+.no{color:var(--muted); opacity:0.6}
+
+.notes{list-style:none; margin:0; padding:0; display:grid; gap:8px; max-width:75ch; color:var(--muted); font-size:0.9375rem}
+.notes li{padding-left:18px; position:relative}
+.notes li::before{content:""; position:absolute; left:0; top:0.6em; width:8px; height:2px; background:var(--brass)}
+.notes strong{color:var(--ink); font-weight:600}
+
+/* apps */
+.chips{display:flex; flex-wrap:wrap; gap:8px; list-style:none; margin:0; padding:0}
+.chips li{border:1px solid var(--line); border-radius:999px; padding:6px 12px; font-size:0.875rem; color:var(--muted)}
+.steps{list-style:none; margin:0; padding:0; display:grid; grid-template-columns:repeat(3, minmax(0,1fr)); gap:16px; counter-reset:s}
+.step{background:var(--surface); border:1px solid var(--line); border-radius:var(--r); padding:22px; display:grid; grid-template-rows:auto 1fr auto; gap:10px; counter-increment:s}
+.step h3{font-size:1.125rem; display:flex; gap:10px; align-items:baseline}
+.step h3::before{content:"Step " counter(s); font:500 11px/1 var(--mono); text-transform:uppercase; letter-spacing:0.08em; color:var(--brass)}
+.step p{color:var(--muted); font-size:0.9375rem}
+.step .price{color:var(--ink); font-size:1.625rem}
+
+/* bundles */
+.bundles{display:grid; grid-template-columns:repeat(3, minmax(0,1fr)); gap:16px}
+.bundle{background:var(--iron); color:var(--iron-ink); border-radius:var(--r); padding:24px; display:grid; grid-template-rows:auto auto 1fr auto; gap:12px}
+.bundle h3{font-size:1.5rem; font-weight:800}
+.bundle .inc{color:color-mix(in srgb, var(--iron-ink) 75%, transparent); font-size:0.9375rem}
+.bundle .save{color:var(--brass); font:700 1.0625rem/1.3 var(--display); align-self:end}
+.bundle .det{font:500 12px/1.5 var(--mono); color:color-mix(in srgb, var(--iron-ink) 65%, transparent); border-top:1px solid color-mix(in srgb, var(--iron-ink) 18%, transparent); padding-top:12px}
+
+/* add-ons: price ledger */
+.ledger{list-style:none; margin:0; padding:0; display:grid; grid-template-columns:repeat(2, minmax(0,1fr)); column-gap:40px; max-width:900px}
+.ledger li{display:flex; align-items:baseline; gap:10px; padding:14px 0; border-bottom:1px solid var(--line)}
+.ledger .name{font-weight:600}
+.ledger .dots{flex:1; border-bottom:1px dotted var(--line); transform:translateY(-4px); min-width:16px}
+.ledger .amt{font:700 1.125rem/1 var(--display); font-variant-numeric:tabular-nums}
+.ledger .unit{color:var(--muted); font-size:0.8125rem}
+
+/* process */
+.process{list-style:none; margin:0; padding:0; display:grid; grid-template-columns:repeat(4, minmax(0,1fr)); gap:0; border-top:2px solid var(--ink)}
+.process li{padding:18px 20px 0 0; display:grid; gap:6px; counter-increment:p}
+.process{counter-reset:p}
+.process li::before{content:counter(p, decimal-leading-zero); font:500 12px/1 var(--mono); color:var(--brass)}
+.process h3{font-size:1.125rem}
+.process p{color:var(--muted); font-size:0.9375rem}
+
+.terms{columns:2 320px; column-gap:40px; margin:0; padding:0; list-style:none; font-size:0.9375rem; color:var(--muted)}
+.terms li{break-inside:avoid; padding:10px 0 10px 18px; position:relative; border-bottom:1px solid var(--line)}
+.terms li::before{content:""; position:absolute; left:0; top:1.15em; width:8px; height:2px; background:var(--brass)}
+.terms strong{color:var(--ink); font-weight:600}
+
+/* close */
+.close{background:var(--iron); color:var(--iron-ink)}
+.close .wrap{padding-block:64px; display:grid; gap:16px; max-width:1120px}
+.close h2{font-size:clamp(2rem, 4.5vw, 3.2rem); font-weight:800; max-width:18ch}
+.close p{max-width:60ch; color:color-mix(in srgb, var(--iron-ink) 78%, transparent); font-size:1.0625rem}
+.close .contact{font:500 14px/1.6 var(--mono); color:var(--iron-ink); display:flex; flex-wrap:wrap; gap:6px 24px; user-select:all}
+.cta{justify-self:start; background:var(--brass); color:var(--brass-ink); text-decoration:none; font-weight:600; padding:12px 20px; border-radius:999px}
+.foot{font:500 12px/1.4 var(--mono); color:color-mix(in srgb, var(--iron-ink) 55%, transparent); display:flex; align-items:center; gap:10px; margin-top:24px}
+
+@media (max-width: 900px){
+  .tiers.cols-3, .steps, .bundles{grid-template-columns:minmax(0,1fr)}
+  .process{grid-template-columns:repeat(2, minmax(0,1fr)); row-gap:24px}
+}
+@media (max-width: 640px){
+  .tiers.cols-2, .ledger{grid-template-columns:minmax(0,1fr)}
+  .process{grid-template-columns:minmax(0,1fr)}
+  main .wrap{gap:64px; padding-block:48px 72px}
+}
+</style>
+
+<div class="mast"><div class="wrap">
+  <div class="brand"><svg class="mark" viewBox="0 0 32 24" aria-hidden="true"><path fill="currentColor" d="M1 3h30v5l-8 2-2 4 4 6H7l4-6-2-4-6-2.5z"/><path fill="var(--brass)" d="M24 0h3l-1.5 2z"/></svg><span>Creative Smithy</span></div>
+  <div class="hero">
+    <p class="eyebrow">Price list · 2026</p>
+    <h1>Digital Services &amp; Packages</h1>
+    <p class="intro">Websites, online stores, custom apps and marketing, all under one roof. Choose a single service or combine them for a bundle discount. All prices are in GBP.</p>
+    <ul class="facts"><li>Prices in GBP</li><li>Excluding VAT</li><li>Valid 30 days</li><li>Bundle and save</li></ul>
+  </div>
+</div></div>
+
+<nav class="index" aria-label="Services"><div class="wrap"><ul>
+  <li><a href="#websites">Websites</a></li><li><a href="#woocommerce">WooCommerce</a></li><li><a href="#shopify">Shopify</a></li><li><a href="#apps">Custom Apps</a></li><li><a href="#social">Social media</a></li><li><a href="#seo">SEO</a></li><li><a href="#care">Care plans</a></li><li><a href="#bundles">Bundles</a></li><li><a href="#addons">Add-ons</a></li><li><a href="#terms">Terms</a></li>
+</ul></div></nav>
+
+<main><div class="wrap">
+  <section class="sec" id="websites"><header class="sec-head">
+      <p class="eyebrow"><span class="num">01</span>WordPress · one-off price</p>
+      <h2>Websites</h2>
+      <p class="lead">A professional site you can edit yourself, built on WordPress.</p>
+    </header>
+    <div class="tiers cols-3"><article class="tier" style="--rows:15">
+      <div class="tier-top">
+        
+        <h3>Starter</h3>
+        <p class="price">£300 </p>
+      </div>
+      <dl><div class="row"><dt>Pages</dt><dd>Up to 5</dd></div><div class="row"><dt>Design</dt><dd>Template-based, your branding</dd></div><div class="row"><dt>Mobile-responsive</dt><dd><span class="yes"><svg class="tick" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8.5l3.2 3L13 4.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="sr">Included</span></span></dd></div><div class="row"><dt>Contact form</dt><dd><span class="yes"><svg class="tick" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8.5l3.2 3L13 4.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="sr">Included</span></span></dd></div><div class="row"><dt>Blog</dt><dd><span class="no" aria-label="Not included">–</span></dd></div><div class="row"><dt>Basic SEO setup</dt><dd><span class="yes"><svg class="tick" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8.5l3.2 3L13 4.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="sr">Included</span></span></dd></div><div class="row"><dt>Speed optimisation</dt><dd>Basic</dd></div><div class="row"><dt>Google Analytics & Search Console</dt><dd><span class="no" aria-label="Not included">–</span></dd></div><div class="row"><dt>Cookie banner & GDPR pages</dt><dd><span class="yes"><svg class="tick" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8.5l3.2 3L13 4.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="sr">Included</span></span></dd></div><div class="row"><dt>Booking, quotes or integrations</dt><dd><span class="no" aria-label="Not included">–</span></dd></div><div class="row"><dt>Revision rounds</dt><dd>1</dd></div><div class="row"><dt>Post-launch support</dt><dd>7 days</dd></div><div class="row"><dt>Delivery time</dt><dd>7–10 days</dd></div></dl>
+    </article><article class="tier popular" style="--rows:15">
+      <div class="tier-top">
+        <span class="badge">Most popular</span>
+        <h3>Business</h3>
+        <p class="price">£500 </p>
+      </div>
+      <dl><div class="row"><dt>Pages</dt><dd>Up to 10</dd></div><div class="row"><dt>Design</dt><dd>Custom design</dd></div><div class="row"><dt>Mobile-responsive</dt><dd><span class="yes"><svg class="tick" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8.5l3.2 3L13 4.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="sr">Included</span></span></dd></div><div class="row"><dt>Contact form</dt><dd><span class="yes"><svg class="tick" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8.5l3.2 3L13 4.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="sr">Included</span></span></dd></div><div class="row"><dt>Blog</dt><dd><span class="yes"><svg class="tick" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8.5l3.2 3L13 4.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="sr">Included</span></span></dd></div><div class="row"><dt>Basic SEO setup</dt><dd><span class="yes"><svg class="tick" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8.5l3.2 3L13 4.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="sr">Included</span></span></dd></div><div class="row"><dt>Speed optimisation</dt><dd><span class="yes"><svg class="tick" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8.5l3.2 3L13 4.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="sr">Included</span></span></dd></div><div class="row"><dt>Google Analytics & Search Console</dt><dd><span class="yes"><svg class="tick" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8.5l3.2 3L13 4.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="sr">Included</span></span></dd></div><div class="row"><dt>Cookie banner & GDPR pages</dt><dd><span class="yes"><svg class="tick" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8.5l3.2 3L13 4.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="sr">Included</span></span></dd></div><div class="row"><dt>Booking, quotes or integrations</dt><dd><span class="no" aria-label="Not included">–</span></dd></div><div class="row"><dt>Revision rounds</dt><dd>2</dd></div><div class="row"><dt>Post-launch support</dt><dd>14 days</dd></div><div class="row"><dt>Delivery time</dt><dd>2–3 weeks</dd></div></dl>
+    </article><article class="tier" style="--rows:15">
+      <div class="tier-top">
+        
+        <h3>Growth</h3>
+        <p class="price">£900 </p>
+      </div>
+      <dl><div class="row"><dt>Pages</dt><dd>Up to 15</dd></div><div class="row"><dt>Design</dt><dd>Fully custom design</dd></div><div class="row"><dt>Mobile-responsive</dt><dd><span class="yes"><svg class="tick" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8.5l3.2 3L13 4.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="sr">Included</span></span></dd></div><div class="row"><dt>Contact form</dt><dd>Yes + lead-capture forms</dd></div><div class="row"><dt>Blog</dt><dd><span class="yes"><svg class="tick" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8.5l3.2 3L13 4.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="sr">Included</span></span></dd></div><div class="row"><dt>Basic SEO setup</dt><dd>Advanced</dd></div><div class="row"><dt>Speed optimisation</dt><dd><span class="yes"><svg class="tick" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8.5l3.2 3L13 4.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="sr">Included</span></span></dd></div><div class="row"><dt>Google Analytics & Search Console</dt><dd><span class="yes"><svg class="tick" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8.5l3.2 3L13 4.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="sr">Included</span></span></dd></div><div class="row"><dt>Cookie banner & GDPR pages</dt><dd><span class="yes"><svg class="tick" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8.5l3.2 3L13 4.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="sr">Included</span></span></dd></div><div class="row"><dt>Booking, quotes or integrations</dt><dd><span class="yes"><svg class="tick" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8.5l3.2 3L13 4.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="sr">Included</span></span></dd></div><div class="row"><dt>Revision rounds</dt><dd>3</dd></div><div class="row"><dt>Post-launch support</dt><dd>30 days</dd></div><div class="row"><dt>Delivery time</dt><dd>3–5 weeks</dd></div></dl>
+    </article></div><ul class="notes"><li><strong>Included in every website:</strong> SSL certificate, basic security setup, social media links, and a short video showing how to edit your site.</li></ul></section>
+<section class="sec" id="woocommerce"><header class="sec-head">
+      <p class="eyebrow"><span class="num">02</span>WooCommerce · one-off price</p>
+      <h2>Online Stores</h2>
+      <p class="lead">A full shop on WordPress that you own outright, with no platform subscription.</p>
+    </header>
+    <div class="tiers cols-2"><article class="tier" style="--rows:12">
+      <div class="tier-top">
+        
+        <h3>Starter Store</h3>
+        <p class="price">£400 </p>
+      </div>
+      <dl><div class="row"><dt>Products uploaded</dt><dd>Up to 20</dd></div><div class="row"><dt>Payments (Stripe, PayPal, cards)</dt><dd><span class="yes"><svg class="tick" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8.5l3.2 3L13 4.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="sr">Included</span></span></dd></div><div class="row"><dt>Shipping & tax setup (UK VAT)</dt><dd><span class="yes"><svg class="tick" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8.5l3.2 3L13 4.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="sr">Included</span></span></dd></div><div class="row"><dt>Product search & filters</dt><dd>Basic</dd></div><div class="row"><dt>Customer reviews</dt><dd><span class="no" aria-label="Not included">–</span></dd></div><div class="row"><dt>Abandoned-cart & order emails</dt><dd>Basic order emails</dd></div><div class="row"><dt>Basic SEO for products</dt><dd><span class="yes"><svg class="tick" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8.5l3.2 3L13 4.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="sr">Included</span></span></dd></div><div class="row"><dt>Revision rounds</dt><dd>2</dd></div><div class="row"><dt>Post-launch support</dt><dd>14 days</dd></div><div class="row"><dt>Delivery time</dt><dd>2–3 weeks</dd></div></dl>
+    </article><article class="tier" style="--rows:12">
+      <div class="tier-top">
+        
+        <h3>Standard Store</h3>
+        <p class="price">£900 </p>
+      </div>
+      <dl><div class="row"><dt>Products uploaded</dt><dd>Up to 100</dd></div><div class="row"><dt>Payments (Stripe, PayPal, cards)</dt><dd><span class="yes"><svg class="tick" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8.5l3.2 3L13 4.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="sr">Included</span></span></dd></div><div class="row"><dt>Shipping & tax setup (UK VAT)</dt><dd><span class="yes"><svg class="tick" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8.5l3.2 3L13 4.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="sr">Included</span></span></dd></div><div class="row"><dt>Product search & filters</dt><dd>Advanced</dd></div><div class="row"><dt>Customer reviews</dt><dd><span class="yes"><svg class="tick" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8.5l3.2 3L13 4.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="sr">Included</span></span></dd></div><div class="row"><dt>Abandoned-cart & order emails</dt><dd><span class="yes"><svg class="tick" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8.5l3.2 3L13 4.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="sr">Included</span></span></dd></div><div class="row"><dt>Basic SEO for products</dt><dd><span class="yes"><svg class="tick" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8.5l3.2 3L13 4.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="sr">Included</span></span></dd></div><div class="row"><dt>Revision rounds</dt><dd>3</dd></div><div class="row"><dt>Post-launch support</dt><dd>30 days</dd></div><div class="row"><dt>Delivery time</dt><dd>3–5 weeks</dd></div></dl>
+    </article></div><ul class="notes"><li><strong>Extra products:</strong> £25 per 10 products.</li></ul></section>
+<section class="sec" id="shopify"><header class="sec-head">
+      <p class="eyebrow"><span class="num">03</span>Shopify · one-off price</p>
+      <h2>Online Stores</h2>
+      <p class="lead">A fast route to selling online, set up and branded on Shopify.</p>
+    </header>
+    <div class="tiers cols-2"><article class="tier" style="--rows:10">
+      <div class="tier-top">
+        
+        <h3>Starter Shop</h3>
+        <p class="price"><span class="from">from</span> £500 </p>
+      </div>
+      <dl><div class="row"><dt>Theme setup & branding</dt><dd><span class="yes"><svg class="tick" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8.5l3.2 3L13 4.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="sr">Included</span></span></dd></div><div class="row"><dt>Products uploaded</dt><dd>Up to 20</dd></div><div class="row"><dt>Collections & navigation</dt><dd><span class="yes"><svg class="tick" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8.5l3.2 3L13 4.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="sr">Included</span></span></dd></div><div class="row"><dt>Payments, shipping & taxes</dt><dd><span class="yes"><svg class="tick" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8.5l3.2 3L13 4.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="sr">Included</span></span></dd></div><div class="row"><dt>Policy pages (returns, privacy, terms)</dt><dd><span class="yes"><svg class="tick" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8.5l3.2 3L13 4.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="sr">Included</span></span></dd></div><div class="row"><dt>Recommended apps setup</dt><dd><span class="no" aria-label="Not included">–</span></dd></div><div class="row"><dt>Post-launch support</dt><dd>14 days</dd></div><div class="row"><dt>Delivery time</dt><dd>1–2 weeks</dd></div></dl>
+    </article><article class="tier" style="--rows:10">
+      <div class="tier-top">
+        
+        <h3>Standard Shop</h3>
+        <p class="price"><span class="from">from</span> £900 </p>
+      </div>
+      <dl><div class="row"><dt>Theme setup & branding</dt><dd>Customised theme</dd></div><div class="row"><dt>Products uploaded</dt><dd>Up to 100</dd></div><div class="row"><dt>Collections & navigation</dt><dd><span class="yes"><svg class="tick" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8.5l3.2 3L13 4.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="sr">Included</span></span></dd></div><div class="row"><dt>Payments, shipping & taxes</dt><dd><span class="yes"><svg class="tick" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8.5l3.2 3L13 4.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="sr">Included</span></span></dd></div><div class="row"><dt>Policy pages (returns, privacy, terms)</dt><dd><span class="yes"><svg class="tick" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8.5l3.2 3L13 4.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="sr">Included</span></span></dd></div><div class="row"><dt>Recommended apps setup</dt><dd><span class="yes"><svg class="tick" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8.5l3.2 3L13 4.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="sr">Included</span></span></dd></div><div class="row"><dt>Post-launch support</dt><dd>30 days</dd></div><div class="row"><dt>Delivery time</dt><dd>2–4 weeks</dd></div></dl>
+    </article></div><ul class="notes"><li><strong>Product image retouching (optional):</strong> background removal, colour correction and resizing, from £1 per image, with bulk discounts. The final price depends on the number of products and images.</li></ul></section>
+<section class="sec" id="apps"><header class="sec-head">
+      <p class="eyebrow"><span class="num">04</span>For your business · one-off price</p>
+      <h2>Custom Apps</h2>
+      <p class="lead">Have a process that's slow, manual or spread across spreadsheets? We build simple, tailor-made apps for small and medium businesses.</p>
+    </header>
+      <ul class="chips" aria-label="Examples"><li>Booking systems</li><li>Client portals</li><li>Quote calculators</li><li>Inventory trackers</li><li>Lead dashboards</li></ul>
+      <ol class="steps"><li class="step">
+        <h3>Discovery workshop</h3><p>Requirements, scope, simple mockup and fixed quote. Credited in full if you go ahead.</p><p class="price">£150</p></li><li class="step">
+        <h3>MVP app</h3><p>Core features, secure login, deployment, 30 days of support.</p><p class="price"><span class="from">from</span> £1,500</p></li><li class="step">
+        <h3>Advanced app</h3><p>Integrations, payments, admin panel, more user roles.</p><p class="price">Quoted per project</p></li></ol>
+      <ul class="notes"><li><strong>Optional app support plan:</strong> £75 per month (hosting checks, bug fixes, small updates).</li></ul></section>
+<section class="sec" id="social"><header class="sec-head">
+      <p class="eyebrow"><span class="num">05</span>Monthly · billed monthly</p>
+      <h2>Social Media Management</h2>
+      <p class="lead">Consistent, on-brand posting handled for you, from planning to reporting.</p>
+    </header>
+    <div class="tiers cols-3"><article class="tier" style="--rows:11">
+      <div class="tier-top">
+        
+        <h3>Starter</h3>
+        <p class="price">£350 <span class="per">/ month</span></p>
+      </div>
+      <dl><div class="row"><dt>Platforms</dt><dd>1</dd></div><div class="row"><dt>Designed posts</dt><dd>12</dd></div><div class="row"><dt>Short videos (up to 30 sec)</dt><dd>1</dd></div><div class="row"><dt>Captions & hashtags</dt><dd><span class="yes"><svg class="tick" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8.5l3.2 3L13 4.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="sr">Included</span></span></dd></div><div class="row"><dt>Content calendar</dt><dd><span class="yes"><svg class="tick" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8.5l3.2 3L13 4.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="sr">Included</span></span></dd></div><div class="row"><dt>Scheduling & posting</dt><dd><span class="yes"><svg class="tick" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8.5l3.2 3L13 4.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="sr">Included</span></span></dd></div><div class="row"><dt>Community management (comments & DMs)</dt><dd><span class="no" aria-label="Not included">–</span></dd></div><div class="row"><dt>Strategy call</dt><dd><span class="no" aria-label="Not included">–</span></dd></div><div class="row"><dt>Performance report</dt><dd><span class="no" aria-label="Not included">–</span></dd></div></dl>
+    </article><article class="tier popular" style="--rows:11">
+      <div class="tier-top">
+        <span class="badge">Most popular</span>
+        <h3>Growth</h3>
+        <p class="price">£550 <span class="per">/ month</span></p>
+      </div>
+      <dl><div class="row"><dt>Platforms</dt><dd>Instagram, Facebook, TikTok</dd></div><div class="row"><dt>Designed posts</dt><dd>16</dd></div><div class="row"><dt>Short videos (up to 30 sec)</dt><dd>2, shared across platforms</dd></div><div class="row"><dt>Captions & hashtags</dt><dd><span class="yes"><svg class="tick" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8.5l3.2 3L13 4.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="sr">Included</span></span></dd></div><div class="row"><dt>Content calendar</dt><dd><span class="yes"><svg class="tick" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8.5l3.2 3L13 4.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="sr">Included</span></span></dd></div><div class="row"><dt>Scheduling & posting</dt><dd><span class="yes"><svg class="tick" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8.5l3.2 3L13 4.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="sr">Included</span></span></dd></div><div class="row"><dt>Community management (comments & DMs)</dt><dd>Basic</dd></div><div class="row"><dt>Strategy call</dt><dd>Quarterly</dd></div><div class="row"><dt>Performance report</dt><dd>Monthly</dd></div></dl>
+    </article><article class="tier" style="--rows:11">
+      <div class="tier-top">
+        
+        <h3>Pro</h3>
+        <p class="price">£850 <span class="per">/ month</span></p>
+      </div>
+      <dl><div class="row"><dt>Platforms</dt><dd>Instagram, Facebook, TikTok</dd></div><div class="row"><dt>Designed posts</dt><dd>24</dd></div><div class="row"><dt>Short videos (up to 30 sec)</dt><dd>4, shared across platforms</dd></div><div class="row"><dt>Captions & hashtags</dt><dd><span class="yes"><svg class="tick" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8.5l3.2 3L13 4.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="sr">Included</span></span></dd></div><div class="row"><dt>Content calendar</dt><dd><span class="yes"><svg class="tick" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8.5l3.2 3L13 4.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="sr">Included</span></span></dd></div><div class="row"><dt>Scheduling & posting</dt><dd><span class="yes"><svg class="tick" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8.5l3.2 3L13 4.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="sr">Included</span></span></dd></div><div class="row"><dt>Community management (comments & DMs)</dt><dd>Full</dd></div><div class="row"><dt>Strategy call</dt><dd>Monthly</dd></div><div class="row"><dt>Performance report</dt><dd>Monthly with recommendations</dd></div></dl>
+    </article></div><ul class="notes"><li>Ad spend is paid separately.</li><li><strong>Extra platform:</strong> £100 per month.</li></ul></section>
+<section class="sec" id="seo"><header class="sec-head">
+      <p class="eyebrow"><span class="num">06</span>Monthly · billed monthly</p>
+      <h2>SEO</h2>
+      <p class="lead">Steady work to help the right customers find you on Google.</p>
+    </header>
+    <div class="tiers cols-3"><article class="tier" style="--rows:11">
+      <div class="tier-top">
+        
+        <h3>Starter</h3>
+        <p class="price">£450 <span class="per">/ month</span></p>
+      </div>
+      <dl><div class="row"><dt>Initial SEO audit</dt><dd><span class="yes"><svg class="tick" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8.5l3.2 3L13 4.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="sr">Included</span></span></dd></div><div class="row"><dt>Keyword research</dt><dd>Local focus</dd></div><div class="row"><dt>On-page fixes (titles, descriptions, headings)</dt><dd><span class="yes"><svg class="tick" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8.5l3.2 3L13 4.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="sr">Included</span></span></dd></div><div class="row"><dt>Google Business Profile optimisation</dt><dd><span class="yes"><svg class="tick" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8.5l3.2 3L13 4.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="sr">Included</span></span></dd></div><div class="row"><dt>Blog articles</dt><dd><span class="no" aria-label="Not included">–</span></dd></div><div class="row"><dt>Link building</dt><dd><span class="no" aria-label="Not included">–</span></dd></div><div class="row"><dt>Technical SEO fixes</dt><dd><span class="no" aria-label="Not included">–</span></dd></div><div class="row"><dt>Competitor tracking</dt><dd><span class="no" aria-label="Not included">–</span></dd></div><div class="row"><dt>Monthly report</dt><dd><span class="yes"><svg class="tick" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8.5l3.2 3L13 4.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="sr">Included</span></span></dd></div></dl>
+    </article><article class="tier popular" style="--rows:11">
+      <div class="tier-top">
+        <span class="badge">Most popular</span>
+        <h3>Growth</h3>
+        <p class="price">£750 <span class="per">/ month</span></p>
+      </div>
+      <dl><div class="row"><dt>Initial SEO audit</dt><dd><span class="yes"><svg class="tick" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8.5l3.2 3L13 4.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="sr">Included</span></span></dd></div><div class="row"><dt>Keyword research</dt><dd>Local + national</dd></div><div class="row"><dt>On-page fixes (titles, descriptions, headings)</dt><dd><span class="yes"><svg class="tick" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8.5l3.2 3L13 4.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="sr">Included</span></span></dd></div><div class="row"><dt>Google Business Profile optimisation</dt><dd><span class="yes"><svg class="tick" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8.5l3.2 3L13 4.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="sr">Included</span></span></dd></div><div class="row"><dt>Blog articles</dt><dd>2 per month</dd></div><div class="row"><dt>Link building</dt><dd><span class="yes"><svg class="tick" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8.5l3.2 3L13 4.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="sr">Included</span></span></dd></div><div class="row"><dt>Technical SEO fixes</dt><dd>Basic</dd></div><div class="row"><dt>Competitor tracking</dt><dd><span class="no" aria-label="Not included">–</span></dd></div><div class="row"><dt>Monthly report</dt><dd><span class="yes"><svg class="tick" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8.5l3.2 3L13 4.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="sr">Included</span></span></dd></div></dl>
+    </article><article class="tier" style="--rows:11">
+      <div class="tier-top">
+        
+        <h3>Pro</h3>
+        <p class="price">£950 <span class="per">/ month</span></p>
+      </div>
+      <dl><div class="row"><dt>Initial SEO audit</dt><dd><span class="yes"><svg class="tick" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8.5l3.2 3L13 4.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="sr">Included</span></span></dd></div><div class="row"><dt>Keyword research</dt><dd>Full competitor-based</dd></div><div class="row"><dt>On-page fixes (titles, descriptions, headings)</dt><dd><span class="yes"><svg class="tick" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8.5l3.2 3L13 4.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="sr">Included</span></span></dd></div><div class="row"><dt>Google Business Profile optimisation</dt><dd><span class="yes"><svg class="tick" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8.5l3.2 3L13 4.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="sr">Included</span></span></dd></div><div class="row"><dt>Blog articles</dt><dd>4 per month</dd></div><div class="row"><dt>Link building</dt><dd><span class="yes"><svg class="tick" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8.5l3.2 3L13 4.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="sr">Included</span></span></dd></div><div class="row"><dt>Technical SEO fixes</dt><dd>Full</dd></div><div class="row"><dt>Competitor tracking</dt><dd><span class="yes"><svg class="tick" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8.5l3.2 3L13 4.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="sr">Included</span></span></dd></div><div class="row"><dt>Monthly report</dt><dd>Yes + strategy call</dd></div></dl>
+    </article></div><ul class="notes"><li>SEO takes time. Most clients see clear movement within 3 to 6 months.</li></ul></section>
+<section class="sec" id="care"><header class="sec-head">
+      <p class="eyebrow"><span class="num">07</span>Monthly · billed monthly</p>
+      <h2>Website Care Plans</h2>
+      <p class="lead">Keep your site updated, backed up and secure after launch.</p>
+    </header>
+    <div class="tiers cols-3"><article class="tier" style="--rows:8">
+      <div class="tier-top">
+        
+        <h3>Basic</h3>
+        <p class="price">£40 <span class="per">/ month</span></p>
+      </div>
+      <dl><div class="row"><dt>Plugin, theme & core updates</dt><dd><span class="yes"><svg class="tick" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8.5l3.2 3L13 4.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="sr">Included</span></span></dd></div><div class="row"><dt>Daily or weekly backups</dt><dd><span class="yes"><svg class="tick" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8.5l3.2 3L13 4.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="sr">Included</span></span></dd></div><div class="row"><dt>Security scans & uptime monitoring</dt><dd><span class="yes"><svg class="tick" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8.5l3.2 3L13 4.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="sr">Included</span></span></dd></div><div class="row"><dt>Content changes included</dt><dd><span class="no" aria-label="Not included">–</span></dd></div><div class="row"><dt>Monthly speed check</dt><dd><span class="no" aria-label="Not included">–</span></dd></div><div class="row"><dt>Priority response</dt><dd><span class="no" aria-label="Not included">–</span></dd></div></dl>
+    </article><article class="tier" style="--rows:8">
+      <div class="tier-top">
+        
+        <h3>Standard</h3>
+        <p class="price">£60 <span class="per">/ month</span></p>
+      </div>
+      <dl><div class="row"><dt>Plugin, theme & core updates</dt><dd><span class="yes"><svg class="tick" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8.5l3.2 3L13 4.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="sr">Included</span></span></dd></div><div class="row"><dt>Daily or weekly backups</dt><dd><span class="yes"><svg class="tick" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8.5l3.2 3L13 4.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="sr">Included</span></span></dd></div><div class="row"><dt>Security scans & uptime monitoring</dt><dd><span class="yes"><svg class="tick" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8.5l3.2 3L13 4.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="sr">Included</span></span></dd></div><div class="row"><dt>Content changes included</dt><dd>1 hour</dd></div><div class="row"><dt>Monthly speed check</dt><dd><span class="no" aria-label="Not included">–</span></dd></div><div class="row"><dt>Priority response</dt><dd><span class="no" aria-label="Not included">–</span></dd></div></dl>
+    </article><article class="tier" style="--rows:8">
+      <div class="tier-top">
+        
+        <h3>Premium</h3>
+        <p class="price">£80 <span class="per">/ month</span></p>
+      </div>
+      <dl><div class="row"><dt>Plugin, theme & core updates</dt><dd><span class="yes"><svg class="tick" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8.5l3.2 3L13 4.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="sr">Included</span></span></dd></div><div class="row"><dt>Daily or weekly backups</dt><dd><span class="yes"><svg class="tick" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8.5l3.2 3L13 4.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="sr">Included</span></span></dd></div><div class="row"><dt>Security scans & uptime monitoring</dt><dd><span class="yes"><svg class="tick" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8.5l3.2 3L13 4.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="sr">Included</span></span></dd></div><div class="row"><dt>Content changes included</dt><dd>2 hours</dd></div><div class="row"><dt>Monthly speed check</dt><dd><span class="yes"><svg class="tick" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8.5l3.2 3L13 4.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="sr">Included</span></span></dd></div><div class="row"><dt>Priority response</dt><dd><span class="yes"><svg class="tick" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8.5l3.2 3L13 4.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="sr">Included</span></span></dd></div></dl>
+    </article></div><ul class="notes"><li>Hosting and domain management available at cost plus a small admin fee.</li></ul></section>
+
+  <section class="sec" id="bundles">
+    <header class="sec-head"><p class="eyebrow"><span class="num">08</span>Combine and save</p><h2>Bundles</h2>
+      <p class="lead">Pair a Business website with monthly marketing and pay less for both.</p></header>
+    <div class="bundles"><article class="bundle"><h3>Launch</h3><p class="inc">Business website + 3 months of Growth social media</p><p class="save">10% off the website</p><p class="det">Website £450 instead of £500</p></article><article class="bundle"><h3>Visibility</h3><p class="inc">Business website + 3 months of Growth SEO</p><p class="save">10% off the website</p><p class="det">Website £450 instead of £500</p></article><article class="bundle"><h3>Complete</h3><p class="inc">Business website + Growth social media + Growth SEO (3-month minimum)</p><p class="save">10% off the website and 5% off the monthly retainers</p><p class="det">Website £450 instead of £500 · Retainers £1,235 a month instead of £1,300</p></article></div>
+  </section>
+
+  <section class="sec" id="addons">
+    <header class="sec-head"><p class="eyebrow"><span class="num">09</span>Extras</p><h2>Add-ons</h2>
+      <p class="lead">Add these to any package.</p></header>
+    <ul class="ledger"><li><span class="name">Copywriting</span><span class="dots"></span><span class="amt">£40</span><span class="unit">per page</span></li><li><span class="name">Logo & simple brand kit</span><span class="dots"></span><span class="amt">£150</span></li><li><span class="name">Google Business Profile setup</span><span class="dots"></span><span class="amt">£80</span></li><li><span class="name">Email newsletter setup</span><span class="dots"></span><span class="amt">£120</span></li><li><span class="name">Extra short video</span><span class="dots"></span><span class="amt">£60</span></li><li><span class="name">Extra revision round</span><span class="dots"></span><span class="amt">£40</span></li></ul>
+  </section>
+
+  <section class="sec" id="process">
+    <header class="sec-head"><p class="eyebrow"><span class="num">10</span>Process</p><h2>How we work</h2></header>
+    <ol class="process"><li><h3>Discovery</h3><p>A short call to understand your business, goals and budget.</p></li><li><h3>Proposal</h3><p>A clear scope, timeline and price for the package you choose.</p></li><li><h3>Build and launch</h3><p>Regular updates, then review and approval before anything goes live.</p></li><li><h3>Support and growth</h3><p>Care plans and monthly marketing keep results improving.</p></li></ol>
+  </section>
+
+  <section class="sec" id="terms">
+    <header class="sec-head"><p class="eyebrow"><span class="num">11</span>The small print</p><h2>Terms &amp; payment</h2></header>
+    <ul class="terms"><li><strong>Websites, stores and apps:</strong> 50% to start, 50% before launch or handover.</li><li><strong>Social media and SEO:</strong> billed monthly in advance, with a 3-month minimum, then 30 days' notice to cancel.</li><li>Prices are in GBP and exclude VAT where applicable.</li><li>Domains, hosting, premium plugins, stock images and ad spend are paid by the client.</li><li>The client provides content, images and logins by the agreed date; delays move the timeline.</li><li>Revision rounds are as listed in each package; extra rounds are charged at the add-on rate.</li><li>Full ownership of the finished work transfers to you on final payment.</li><li>Payment by bank transfer or card.</li></ul>
+  </section>
+</div></main>
+
+<section class="close" id="next"><div class="wrap">
+  <p class="eyebrow" style="color:var(--brass)">Next steps</p>
+  <h2>Ready to get started?</h2>
+  <p>Book a free 20-minute call or reply to this message. We'll agree your package, then send a short agreement and the first invoice.</p>
+  
+  <p class="contact"><span>project@creativesmithy.com</span><span>+971 54 763 5672</span></p>
+  <p class="foot"><svg class="mark" viewBox="0 0 32 24" aria-hidden="true"><path fill="currentColor" d="M1 3h30v5l-8 2-2 4 4 6H7l4-6-2-4-6-2.5z"/><path fill="var(--brass)" d="M24 0h3l-1.5 2z"/></svg><span>Creative Smithy · Prices valid 30 days from 14 October 2026</span></p>
+</div></section>
