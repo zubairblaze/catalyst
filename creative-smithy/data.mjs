@@ -26,9 +26,9 @@ export const sections = [
     id: 'websites', title: 'Websites', subtitle: 'WordPress', kind: 'tiers', billing: 'one-off',
     lead: 'A professional site you can edit yourself, built on WordPress.',
     tiers: [
-      { name: 'Starter', price: '£450' },
-      { name: 'Business', price: '£850', popular: true },
-      { name: 'Growth', price: '£1,400' },
+      { name: 'Starter', price: '£300' },
+      { name: 'Business', price: '£500', popular: true },
+      { name: 'Growth', price: '£900' },
     ],
     rows: [
       ['Pages', 'Up to 5', 'Up to 10', 'Up to 15'],
@@ -51,8 +51,8 @@ export const sections = [
     id: 'woocommerce', title: 'Online Stores', subtitle: 'WooCommerce', kind: 'tiers', billing: 'one-off',
     lead: 'A full shop on WordPress that you own outright, with no platform subscription.',
     tiers: [
-      { name: 'Starter Store', price: '£900' },
-      { name: 'Standard Store', price: '£1,500' },
+      { name: 'Starter Store', price: '£400' },
+      { name: 'Standard Store', price: '£900' },
     ],
     rows: [
       ['Products uploaded', 'Up to 20', 'Up to 100'],
@@ -125,7 +125,7 @@ export const sections = [
     tiers: [
       { name: 'Starter', price: '£450' },
       { name: 'Growth', price: '£750', popular: true },
-      { name: 'Pro', price: '£1,200' },
+      { name: 'Pro', price: '£950' },
     ],
     rows: [
       ['Initial SEO audit', Y, Y, Y],
@@ -161,9 +161,9 @@ export const sections = [
 ];
 
 export const bundles = [
-  { name: 'Launch', includes: 'Business website + 3 months of Growth social media', saving: '10% off the website', detail: 'Website £765 instead of £850' },
-  { name: 'Visibility', includes: 'Business website + 3 months of Growth SEO', saving: '10% off the website', detail: 'Website £765 instead of £850' },
-  { name: 'Complete', includes: 'Business website + Growth social media + Growth SEO (3-month minimum)', saving: '10% off the website and 5% off the monthly retainers', detail: 'Website £765 instead of £850 · Retainers £1,235 a month instead of £1,300' },
+  { name: 'Launch', includes: 'Business website + 3 months of Growth social media', saving: '10% off the website', detail: 'Website £450 instead of £500' },
+  { name: 'Visibility', includes: 'Business website + 3 months of Growth SEO', saving: '10% off the website', detail: 'Website £450 instead of £500' },
+  { name: 'Complete', includes: 'Business website + Growth social media + Growth SEO (3-month minimum)', saving: '10% off the website and 5% off the monthly retainers', detail: 'Website £450 instead of £500 · Retainers £1,235 a month instead of £1,300' },
 ];
 
 export const addons = [
